@@ -1,7 +1,7 @@
 thzzccloud:
   oauth2:
     jwtSigningKey: thzzc
-    
+
 zuul:
   sensitive-headers:
   host:
@@ -27,6 +27,20 @@ zuul:
       sensitiveHeaders:
 #      strip-prefix: false
       service-id: doc
+      ribbon:
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1
+        MaxAutoRetriesNextServer: 2
+        OkToRetryOnAllOperations: false
+        ConnectTimeout: 10000
+        ReadTimeout: 10000
+
+    admin-route:
+      path: /admin/**
+      sensitiveHeaders:
+#      strip-prefix: false
+      service-id: admin
       ribbon:
         eager-load:
           enabled: true
