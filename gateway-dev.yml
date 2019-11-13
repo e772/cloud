@@ -1,3 +1,14 @@
+security:
+  oauth2:
+    client:
+      clientId: cloud-thzzc-client-uac
+      clientSecret: thzzccloudClientSecret
+      access-token-uri: http://localhost:7979/uac/oauth/token
+      user-authorization-uri: http://localhost:7979/uac/oauth/authorize
+    resource:
+      id: cloud-thzzc-resource-uac
+      filter-order: 3
+      
 thzzccloud:
   enableSqlLogInterceptor: false
   dingTalk:
