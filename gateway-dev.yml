@@ -1,3 +1,7 @@
+thzzccloud:
+  oauth2:
+    jwtSigningKey: thzzc
+    
 zuul:
   sensitive-headers:
   host:
