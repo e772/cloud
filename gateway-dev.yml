@@ -34,7 +34,7 @@ zuul:
       path: /admin/**
       sensitiveHeaders:
 #      strip-prefix: false
-        ervice-id: admin
+       service-id: admin
         ribbon:
           eager-load:
             enabled: true
