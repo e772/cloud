@@ -52,11 +52,11 @@ thzzccloud:
       port: 6379
       timeout: 0
       pool:
-        max-active: 200
-        max-wait: 10000
-        max-total: 200
-        max-idle: 8
-        min-idle: 5
+        maxActive: 200
+        maxWait: 10000
+        maxTotal: 200
+        maxIdle: 8
+        minIdle: 5
 
 oauth: #oauth2-server认证授权服务器的url配置，在获取AccessToken以及检测AccessToken中会用到
   token: http://localhost:8000/oauth/token?
