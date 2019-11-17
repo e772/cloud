@@ -4,7 +4,7 @@ spring:
     password: thzzc0926
     port: 6379
     timeout: 0
-    pool: 
+    pool:
       max-active: 200
       max-wait: 10000
       max-total: 200
@@ -32,11 +32,11 @@ spring:
 #mybatis配置
 mybatis:
   typeAliasesPackage: com.thzzc.cloud.provider.*.entity
-  mapperLocations: classpath*:mapper/*.xml 
+  mapperLocations: classpath*:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    
+
 thzzccloud:
   enableSqlLogInterceptor: false
   dingTalk:
@@ -46,8 +46,18 @@ thzzccloud:
   token:
     interceptor:
       enable: true
-    
+  redis:
+      host: 47.106.32.58
+      password: thzzc0926
+      port: 6379
+      timeout: 0
+      pool:
+        max-active: 200
+        max-wait: 10000
+        max-total: 200
+        max-idle: 8
+        min-idle: 5
+
 oauth: #oauth2-server认证授权服务器的url配置，在获取AccessToken以及检测AccessToken中会用到
   token: http://localhost:8000/oauth/token?
   check_token: http://localhost:8000/oauth/check_token  #检查AccessToken有效性的url(认证授权服务器的url地址),获取 AccessToken 对象
-    
