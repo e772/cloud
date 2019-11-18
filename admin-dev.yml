@@ -14,9 +14,9 @@ thzzccloud:
     password: thzzc0926
     port: 6379
     timeout: 0
-      pool:
-        maxActive: 200
-        maxWait: 10000
-        maxTotal: 200
-        maxIdle: 8
-        minIdle: 5
+    pool:
+      maxActive: 200
+      maxWait: 10000
+      maxTotal: 200
+      maxIdle: 8
+      minIdle: 5
