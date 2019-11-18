@@ -11,10 +11,10 @@ thzzccloud:
     jwtSigningKey: thzzccloud
 
   redis:
-      host: 47.106.32.58
-      password: thzzc0926
-      port: 6379
-      timeout: 0
+    host: 47.106.32.58
+    password: thzzc0926
+    port: 6379
+    timeout: 0
       pool:
         maxActive: 200
         maxWait: 10000
