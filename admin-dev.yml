@@ -9,7 +9,6 @@ thzzccloud:
       enable: true
   oauth2:
     jwtSigningKey: thzzccloud
-
   redis:
     host: 47.106.32.58
     password: thzzc0926
