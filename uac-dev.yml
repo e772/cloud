@@ -55,3 +55,8 @@ sccloud:
         clientSecret: sccloud
         accessTokenValidateSeconds: 7200
         scope: "*"
+      clients[2]:
+        clientId: gateway
+        clientSecret: sccloud
+        accessTokenValidateSeconds: 7200
+        scope: "*"
