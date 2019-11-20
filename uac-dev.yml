@@ -1,0 +1,38 @@
+spring:
+  redis:
+    host: 47.106.32.58
+    password: thzzc0926
+    port: 6379
+    timeout: 0
+    pool: 
+      max-active: 200
+      max-wait: 10000
+      max-total: 200
+      max-idle: 8
+      min-idle: 5
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.106.32.58:3306/thzzc?useSSL=false&characterEncoding=utf-8
+    username: root
+    password: thzzc0926
+    filters: stat,wall
+    druid:
+      initial-size: 50
+      min-idle: 50
+      max-active: 100
+      test-on-borrow: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      web-stat-filter:
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      stat-view-servlet:
+        allow:
+        login-username: admin
+        login-password: admin
+#mybatis配置
+mybatis:
+  typeAliasesPackage: com.sysf.cloud.provider.*.entity
+  mapperLocations: classpath*:mapper/*.xml 
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
