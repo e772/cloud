@@ -4,7 +4,7 @@ spring:
     password: thzzc0926
     port: 6379
     timeout: 0
-    pool: 
+    pool:
       max-active: 200
       max-wait: 10000
       max-total: 200
@@ -32,7 +32,22 @@ spring:
 #mybatis配置
 mybatis:
   typeAliasesPackage: com.sysf.cloud.provider.*.entity
-  mapperLocations: classpath*:mapper/*.xml 
+  mapperLocations: classpath*:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+sccloud:
+  security:
+    oauth2:
+      tokenStore: jwt
+      clients[0]:
+        clientId: uac
+        clientSecret: sccloud
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[1]:
+        clientId: admin
+        clientSecret: sccloud
+        accessTokenValidateSeconds: 7200
+        scope: "*"
