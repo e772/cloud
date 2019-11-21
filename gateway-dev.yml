@@ -46,8 +46,8 @@ zuul:
 security:
   oauth2:
     client:
-      clientId: cloud-thzzc-client-gateway
-      clientSecret: paascloudClientSecret
+      clientId: gateway
+      clientSecret: sccloud
       access-token-uri: http://localhost:7979/uac/oauth/token
       user-authorization-uri: http://localhost:7979/uac/oauth/authorize
     resource:
