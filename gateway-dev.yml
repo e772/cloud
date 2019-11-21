@@ -43,13 +43,6 @@ zuul:
   add-proxy-headers: true
   add-host-header: true
 
-security:
-  oauth2:
-    client:
-      clientId: gateway
-      clientSecret: sccloud
-      access-token-uri: http://localhost:7979/uac/oauth/token
-      user-authorization-uri: http://localhost:7979/uac/oauth/authorize
     
 
 proxy:
