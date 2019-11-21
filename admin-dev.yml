@@ -41,5 +41,5 @@ sccloud:
   token:
     interceptor:
       enable: true
-   oauth2:
+  oauth2:
     jwtSigningKey: sccloud
