@@ -46,7 +46,7 @@ sccloud:
 
   security:
     oauth2:
-      tokenStore: jwt
+      tokenStore: redis
       clients[0]:
         clientId: uac
         clientSecret: sccloud
