@@ -48,17 +48,17 @@ sccloud:
     oauth2:
       tokenStore: jwt
       clients[0]:
-        clientId: uac
+        clientId: sccloud-client-uac
         clientSecret: sccloud
         accessTokenValidateSeconds: 7200
         scope: "*"
       clients[1]:
-        clientId: admin
+        clientId: sccloud-client-admin
         clientSecret: sccloud
         accessTokenValidateSeconds: 7200
         scope: "*"
       clients[2]:
-        clientId: gateway
+        clientId: sccloud-client-gateway
         clientSecret: sccloud
         accessTokenValidateSeconds: 7200
         scope: "*"
