@@ -1,0 +1,107 @@
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.106.32.58:3306/thzzc?useSSL=false&characterEncoding=utf-8
+    username: root
+    password: thzzc0926
+    filters: stat,wall
+    druid:
+      initial-size: 50
+      min-idle: 50
+      max-active: 100
+      test-on-borrow: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      web-stat-filter:
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      stat-view-servlet:
+        allow:
+        login-username: admin
+        login-password: admin
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: scc_tx_group
+
+#mybatis配置
+mybatis:
+  typeAliasesPackage: com.sc.cloud.provider.*.entity
+  mapperLocations: classpath*:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+sccloud:
+  token:
+    interceptor:
+      enable: true
+  oauth2:
+    jwtSigningKey: sccloud
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
+      clientAuthenticationScheme: header
+  security:
+    ocial:
+      filterProcessesUrl: /auth/callback
+      qq:
+        app-id: 101431061
+        app-secret: 0154c848f45fc705412462d4f99a592c
+        providerId: qq
+      weixin:
+        app-id: wxd99431bbff8305a0
+        app-secret: 60f78681d063590a469f1b297feff3c4
+        providerId: weixin
+    code:
+      image:
+        expireIn: 180
+        url: /auth/register,/auth/submitResetPwdEmail,/auth/code/sms
+      sms:
+        expireIn: 1800
+        url: /uac/auth/submitResetPwdPhone
+        mobileMaxSendCount: 20
+        ipMaxSendCount: 2
+        totalMaxSendCount: 3
+    oauth2:
+      tokenStore: jwt
+      clients[0]:
+        clientId: uac
+        clientSecret: sccloud
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[1]:
+        clientId: admin
+        clientSecret: sccloud
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[2]:
+        clientId: gateway
+        clientSecret: sccloud
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+      clients[3]:
+        clientId: order
+        clientSecret: sccloud
+        accessTokenValidateSeconds: 7200
+        scope: "*"
+  globalRedisProperties:
+    g1RedisProperties:
+      host: 47.106.32.58
+      password: thzzc0926
+      port: 6379
+      timeout: 0
+      pool:
+        maxActive: 200
+        maxWait: 10000
+        maxTotal: 200
+        maxIdle: 8
+        minIdle: 5
+      accessTokenExpireTime: 1800
+
+info:
+  软件著作权: zqh
+  著作登记号: 11213
+  关于我们: http://zqh.net
