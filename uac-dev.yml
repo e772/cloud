@@ -111,6 +111,10 @@ sccloud:
         maxIdle: 8
         minIdle: 5
       accessTokenExpireTime: 1800
+jwt:
+  accessTokenExpireTime: 300
+  encryptJWTKey: U0JBUElKV1RkV2FuZzkyNjQ1NA==
+
 info:
   软件著作权: zqh
   著作登记号: 11213
