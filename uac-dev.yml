@@ -98,8 +98,19 @@ sccloud:
         clientSecret: sccloud
         accessTokenValidateSeconds: 7200
         scope: "*"
-accessTokenExpireTime: 300
-encryptJWTKey: U0JBUElKV1RkV2FuZzkyNjQ1NA==        
+  globalRedisProperties:
+    g1RedisProperties:
+      host: 47.106.32.58
+      password: thzzc0926
+      port: 6379
+      timeout: 0
+      pool:
+        maxActive: 200
+        maxWait: 10000
+        maxTotal: 200
+        maxIdle: 8
+        minIdle: 5
+      accessTokenExpireTime: 1800
 info:
   软件著作权: zqh
   著作登记号: 11213
