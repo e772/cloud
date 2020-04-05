@@ -34,7 +34,7 @@ spring:
     alibaba:
       seata:
         tx-service-group: scc_tx_group
-        
+
 #mybatis配置
 mybatis:
   typeAliasesPackage: com.sc.cloud.provider.*.entity
@@ -98,7 +98,8 @@ sccloud:
         clientSecret: sccloud
         accessTokenValidateSeconds: 7200
         scope: "*"
-        
+accessTokenExpireTime: 300
+encryptJWTKey: U0JBUElKV1RkV2FuZzkyNjQ1NA==        
 info:
   软件著作权: zqh
   著作登记号: 11213
