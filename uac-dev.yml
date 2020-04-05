@@ -10,6 +10,7 @@ spring:
       max-total: 200
       max-idle: 8
       min-idle: 5
+    accessTokenExpireTime: 1800
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://47.106.32.58:3306/thzzc?useSSL=false&characterEncoding=utf-8
